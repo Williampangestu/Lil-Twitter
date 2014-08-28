@@ -1,0 +1,15 @@
+<div class='container'>
+
+
+  <h1><%=@user.name%>'s Profile</h1>
+  <% if signed_in? == @user.name %>
+  <form name="input" action="/<%=@user.name%>/tweets/new" method="post">
+    New Tweet: <input type="text" name="content" placeholder="Text here"><input type="submit" value="Post">
+  </form>
+  <% end %>
+  <ol>
+    <%@tweets.each do |tweet| %>
+    <li><%=tweet.content%></li>
+    <% end %>
+  </ol>
+</div>

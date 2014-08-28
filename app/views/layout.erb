@@ -18,8 +18,8 @@
   <title></title>
 </head>
 <header>
-  <h1> <a href="/">Lil' Twitter</a> </h1>
-  <% if session[:username] %>
+  <a href="/dashboard"> <h1> Lil' Twitter </h1> </a>
+  <% if signed_in? %>
     <a href="/logout" class="logout">Logout</a>
   <% end %>
 </header>
