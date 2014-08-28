@@ -15,6 +15,14 @@ post '/login' do
 	redirect '/dashboard'
 end
 
-get 'dashboard'
-	
+get '/dashboard' do
+	@user = User.find_by(username: session[:username])
+	@tweets = user.tweets
+	@tweets << user.followees.tweets
+	@tweets.order(created_at: :desc)
+	erb :dashboard
+end
+
+get '/user/:username' do
+
 end
