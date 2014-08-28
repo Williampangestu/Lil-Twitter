@@ -18,14 +18,18 @@ end
 post '/login' do
   if User.exist?(params[:username], params[:password])
     session[:username] = params[:username]
-    redirect to ('/')
+    redirect to ('/dashboard')
   else
     redirect to('/')
   end
 end
 
-get 'dashboard' do
-
+get '/dashboard' do
+  @user = User.find_by(username: session[:username])
+  @tweets = user.tweets
+  @tweets << user.followees.tweets
+  @tweets.order(created_at: :desc)
+  erb :dashboard
 end
 
 get '/:username' do
@@ -38,5 +42,5 @@ post '/:username/tweets/new' do
   tweet = Tweet.create(content: params[:content])
   user = User.find_by_name(params[:username])
   user.tweets << tweet
-  redirect "/Will"
-end
+  redirect "/#{params[:username]}"
+

@@ -1,0 +1,21 @@
+<div id="sidebar">
+	<%= session[:username] %>
+	<%= user.tweets.count %>
+	<%= user.followees.count %>
+	<%= user.followers.count %>
+
+</div>
+
+<div id="tweets">
+<% @tweets.each do |tweet| %>
+	<div class="tweet_display">
+		<%= tweet.content %>
+		<div class="tweet_author">
+			<%= tweet.user %>
+		</div>
+		<div class="tweet_date">
+			<%= tweet.created_at %>
+		</div>
+	</div>
+<% end %>
+</div>
