@@ -11,6 +11,10 @@ get '/create_acct' do
 end
 
 post '/login' do
+	session[:username] = params[:username]
+	redirect '/dashboard'
+end
 
-session[:username] = params[:username]
+get 'dashboard'
+	
 end
