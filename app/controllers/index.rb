@@ -7,5 +7,10 @@ get '/login' do
 end
 
 get '/create_acct' do
-  erb :
+  erb :create_acct
+end
+
+post '/login' do
+
+session[:username] = params[:username]
 end
