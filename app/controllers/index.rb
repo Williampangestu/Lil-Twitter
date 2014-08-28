@@ -25,22 +25,38 @@ post '/login' do
 end
 
 get '/dashboard' do
-  @user = User.find_by(username: session[:username])
-  @tweets = user.tweets
-  @tweets << user.followees.tweets
-  @tweets.order(created_at: :desc)
-  erb :dashboard
+  if signed_in?
+    @user = User.find_by(name: session[:username])
+    @tweets = @user.tweets
+    @user.followees.each do |followee|
+      @tweets << followee.tweets
+    end
+    @tweets.order(created_at: :desc)
+    erb :dashboard
+  else
+    redirect '/'
+  end
+end
+
+get '/logout' do
+  session.clear
+  redirect '/'
 end
 
 get '/:username' do
-  @user = User.find_by_name(params[:username])
-  @tweets = @user.tweets
-  erb :profile_page
+  if signed_in?
+    @user = User.find_by_name(params[:username])
+    @tweets = @user.tweets
+    erb :profile_page
+  else
+    redirect '/'
+  end
 end
 
 post '/:username/tweets/new' do
-  tweet = Tweet.create(content: params[:content])
-  user = User.find_by_name(params[:username])
-  user.tweets << tweet
-  redirect "/#{params[:username]}"
+    tweet = Tweet.create(content: params[:content])
+    user = User.find_by_name(params[:username])
+    user.tweets << tweet
+    redirect "/#{params[:username]}"
+end
 

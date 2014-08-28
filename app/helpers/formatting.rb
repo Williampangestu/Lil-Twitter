@@ -1,6 +1,6 @@
 helpers do
   def signed_in?
-    session[:user_id]
+    session[:username]
   end
 
 end

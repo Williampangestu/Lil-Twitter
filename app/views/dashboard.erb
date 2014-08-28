@@ -1,8 +1,9 @@
 <div id="sidebar">
 	<%= session[:username] %>
-	<%= user.tweets.count %>
-	<%= user.followees.count %>
-	<%= user.followers.count %>
+	<br>
+	tweets: <%= @user.tweets.count %>
+	following: <%= @user.followees.count %>
+	followers: <%= @user.followers.count %>
 
 </div>
 

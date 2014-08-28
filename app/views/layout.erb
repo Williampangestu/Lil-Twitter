@@ -18,7 +18,10 @@
   <title></title>
 </head>
 <header>
-  <h1> Lil' Twitter </h1>
+  <a href="/dashboard"> <h1> Lil' Twitter </h1> </a>
+  <% if signed_in? %>
+    <a href="/logout" class="logout">Logout</a>
+  <% end %>
 </header>
 <body>
   <%= yield %>
