@@ -1,6 +1,8 @@
 <div id="sidebar">
   <%= session[:username] %>
   <!-- GRAVATAR HERE -->
+
+  <!-- <img src=<%=@image%>> -->
   <br>
   <p><%= @user.name %>'s stats: </p>
   tweets: <%= @user.tweets.count %>
