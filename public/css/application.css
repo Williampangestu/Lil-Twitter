@@ -18,6 +18,7 @@
 }
 
 body {
+  display: block;
   background-color: #0099FF;
 }
 
@@ -29,4 +30,70 @@ header {
   position: fixed;
 }*/
 
+.logout {
+  color: black;
+  font-size: 1.0em;
+  left: 90%;
+  top: 10%;
+  text-decoration: none;
+  position: fixed;
+}
+
+#tweets {
+  left: 35%;
+  top: 20%;
+  text-align: center;
+  font-size: 1.25em;
+  background-color: white;
+  width: 30%;
+  position: fixed;
+  border-radius: 10px;
+}
+
+#tweet_display {
+  width: 50%;
+  height: 30%;
+  font-size: 1.75em;
+  color: black;
+  text-align: center;
+  top: 40%;
+  left: 25%;
+  border-radius: 10px;
+  position: fixed;
+}
+
+#profile_page_access {
+  top: 40%;
+}
+
+#sidebar {
+  margin-top: 20%;
+  margin-left: 2%;
+  font-size: 1.25em;
+}
+
+#new_tweet {
+  text-align: center;
+  top: 18%;
+  left: 38%;
+  position: fixed;
+}
+
+#new_tweet_dashboard {
+  text-align: center;
+  top: 16%;
+  left: 38%;
+  position: fixed;
+}
+
+.tweet_container {
+  left: 35%;
+  top: 25%;
+  text-align: center;
+  font-size: 1.25em;
+  background-color: white;
+  width: 30%;
+  position: fixed;
+  border-radius: 10px;
+}
 
