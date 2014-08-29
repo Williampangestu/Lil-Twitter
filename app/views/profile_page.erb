@@ -27,6 +27,7 @@
 
   <h1><%=@user.name%>'s Profile</h1>
   <% if signed_in? == @user.name %>
+  <%= erb :search_bar %>
   <form name="input" action="/user/<%=@user.name%>/tweets/new" method="post">
     New Tweet: <input type="text" name="content" placeholder="Text here"><input type="submit" value="Post">
   </form>
