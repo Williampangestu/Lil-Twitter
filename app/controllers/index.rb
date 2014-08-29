@@ -45,8 +45,8 @@ end
 
 get '/:username' do
   if signed_in?
-    p User.find_by_name(params[:username])
-    p session[:username]
+    # p User.find_by_name(params[:username])
+    # p session[:username]
     @user = User.find_by_name(params[:username]) || User.find_by(name: session[:username])
     @tweets = @user.tweets
     erb :profile_page
@@ -61,4 +61,31 @@ post '/:username/tweets/new' do
     user.tweets << tweet
     redirect "/#{params[:username]}"
 end
+
+get '/:username/followings' do
+  @user = User.find_by_name(params[:username])
+  @followings = @user.followees
+  erb :following
+end
+
+get '/:username/followers' do
+  @user = User.find_by_name(params[:username])
+  @followers = @user.followers
+  erb :follower
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
