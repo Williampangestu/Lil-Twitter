@@ -2,8 +2,8 @@
 	<%= session[:username] %>
 	<br>
 	tweets: <%= @user.tweets.count %>
-	following: <%= @user.followees.count %>
-	followers: <%= @user.followers.count %>
+	<a href="/<%=session[:username]%>/followings">following:</a> <%= @user.followees.count %>
+	<a href="/<%=session[:username]%>/followers">followers:</a> <%= @user.followers.count %>
 
 </div>
 <form name="input" action="/profile_page" method="get">
