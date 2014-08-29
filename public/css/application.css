@@ -1,4 +1,4 @@
-/*a h1 {
+a h1 {
   color: #0099FF;
   font-size: 3em;
   text-align: center;
@@ -28,7 +28,7 @@ header {
   height: 15vh;
   top: 0px;
   position: fixed;
-}*/
+}
 
 header a {
   text-decoration: none;
@@ -112,6 +112,17 @@ a :hover {
 }
 
 .followers {
+  left: 35%;
+  top: 25%;
+  text-align: center;
+  font-size: 1.25em;
+  background-color: white;
+  width: 30%;
+  position: fixed;
+  border-radius: 10px;
+}
+
+.user_display {
   left: 35%;
   top: 25%;
   text-align: center;

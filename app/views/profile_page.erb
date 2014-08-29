@@ -4,11 +4,11 @@
   <!-- <img src=<%=@image%>> -->
   <br>
   <h1 id="profile_title"><%=@user.name%>'s Profile</h1>
-
+  <%= erb :search_bar %>
   <p><%= @user.name %>'s stats: </p>
-  tweets: <%= @user.tweets.count %>
-  <a href="/user/<%=@user.name%>/followings">following:</a> <%= @user.followees.count %>
-  <a href="/user/<%=@user.name%>/followers">followers:</a> <%= @user.followers.count %>
+  tweets: <%= @user.tweets.count %><br>
+  <a id="following" href="/user/<%=@user.name%>/followings">following:</a> <%= @user.followees.count %><br>
+  <a id="followers" href="/user/<%=@user.name%>/followers">followers:</a> <%= @user.followers.count %>
   <br>
   <% if @user.name != session[:username] %>
     <% if User.find_by(name: session[:username]).followees.include?(@user) %>
@@ -29,15 +29,6 @@
 <% end %>
 
 <div class='tweet_container'>
-
-  <h1><%=@user.name%>'s Profile</h1>
-  <% if signed_in? == @user.name %>
-  <%= erb :search_bar %>
-  <form name="input" action="/user/<%=@user.name%>/tweets/new" method="post">
-    New Tweet: <input type="text" name="content" placeholder="Text here"><input type="submit" value="Post">
-  </form>
-  <% end %>
-  <ol>
 
     <%@tweets.each do |tweet| %>
     <p><%=tweet.content%></p>
