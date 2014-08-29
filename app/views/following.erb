@@ -1,6 +1,6 @@
 <div class='container'>
   <h3>following</h3>
     <%@followings.each do |following| %>
-    <p><%=following.name%></p>
+    <li><a href="/user/<%=following.name%>"><%=following.name%></a></li>
     <% end %>
 </div>
