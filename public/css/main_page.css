@@ -1,0 +1,52 @@
+html {
+  background: url(http://static.tumblr.com/5c0defd14b2a6b706d68bbb15a4bb365/bwep6es/k4jn1s1sk/tumblr_static_361917.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#welcome {
+  height: 60vh;
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  width: 25%;
+}
+
+#welcome h1 {
+  margin-top: 0%;
+}
+
+#login_div {
+  background-color: white;
+  height: 20vh;
+  width: 20%;
+  position: fixed;
+  top: 20%;
+  left: 55%;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+  opacity: 0.8;
+}
+
+#signup_div {
+  background-color: white;
+  height: 20vh;
+  width: 20%;
+  position: fixed;
+  left: 55%;
+  top: 50%;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+  opacity: 0.8;
+}
+
+#signup_id {
+  margin-top: 15%;
+}
+
+#login_id {
+  margin-top: 15%;
+}
