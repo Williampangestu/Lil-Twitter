@@ -1,0 +1,24 @@
+<div id="sidebar">
+	<%= session[:username] %>
+	<br>
+	tweets: <%= @user.tweets.count %>
+	<a href="/<%=session[:username]%>/followings">following:</a> <%= @user.followees.count %>
+	<a href="/<%=session[:username]%>/followers">followers:</a> <%= @user.followers.count %>
+
+</div>
+<form name="input" action="/profile_page" method="get">
+	<input type="submit" value="Go to Profile Page">
+</form>
+<div id="tweets">
+<% @tweets.each do |tweet| %>
+	<div class="tweet_display">
+		<%= tweet.content %>
+		<div class="tweet_author">
+			<%= tweet.user.name %>
+		</div>
+		<div class="tweet_date">
+			<%= tweet.created_at %>
+		</div>
+	</div>
+<% end %>
+</div>
