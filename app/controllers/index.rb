@@ -1,5 +1,5 @@
 get '/' do
-  erb :main_page
+  erb :main_page, layout: false
 end
 
 get '/dashboard' do
