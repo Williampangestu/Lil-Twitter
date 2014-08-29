@@ -1,5 +1,5 @@
 get '/' do
-  erb :main_page
+  erb :main_page, layout: false
 end
 
 get '/login' do
@@ -41,16 +41,6 @@ end
 get '/logout' do
   session.clear
   redirect '/'
-end
-
-post '/follow/:username' do
-  User.find_by(name:session[:username]).followees << User.find_by(name: params[:username])
-  redirect "/#{params[:username]}"
-end
-
-post '/unfollow/:username' do
-  User.find_by(name:session[:username]).followees.delete(User.find_by(name: params[:username]))
-  redirect "/#{params[:username]}"
 end
 
 get '/:username' do

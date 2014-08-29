@@ -1,6 +1,27 @@
-<form name="input" action="/login" method="get">
-<input type="submit" value="Login">
-</form><br>
-<form name="input" action="/create_acct" method="get">
-<input type="submit" value="Create Account">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/main_page.css"/>
+</head>
+
+<div id="welcome">
+  <h1>This is Lil'Twitter.</h1>
+  <p>A Dev Bootcamp experiment.</p>
+</div>
+
+<div id="login_div">
+  <h2>Welcome back!</h2>
+  <form id="login_id" name="input" action="/login" method="get">
+  <input type="submit" value="Login">
+  </form>
+</div>
+<br>
+
+<div id="signup_div">
+  <h2>New to Lil'Twitter?</h2>
+  <form id="signup_id" name="input" action="/create_acct" method="get">
+  <input type="submit" value="Create Account">
+  </form>
+</div>
+
+</html>
