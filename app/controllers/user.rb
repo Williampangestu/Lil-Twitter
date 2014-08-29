@@ -27,17 +27,17 @@ end
 
 post '/follow/:username' do
   User.find_by(name:session[:username]).followees << User.find_by(name: params[:username])
-  redirect "/#{params[:username]}"
+  redirect "/user/#{params[:username]}"
 end
 
 post '/unfollow/:username' do
   User.find_by(name:session[:username]).followees.delete(User.find_by(name: params[:username]))
-  redirect "/#{params[:username]}"
+  redirect "/user/#{params[:username]}"
 end
 
 post '/:username/tweets/new' do
     tweet = Tweet.create(content: params[:content])
     user = User.find_by_name(params[:username])
     user.tweets << tweet
-    redirect "/#{params[:username]}"
+    redirect "/user/#{params[:username]}"
 end
