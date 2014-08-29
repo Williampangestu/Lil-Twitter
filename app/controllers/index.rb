@@ -29,6 +29,8 @@ get '/user/:username' do
     @user.tweets.each do |tweet|
       @tweets << tweet
     end
+    # hash = Digest::MD5.hexdigest('ryaneddydev@gmail.com')
+    # @image = "http://www.gravatar.com/avatar/#{hash}"
     erb :profile_page
   else
     redirect '/'
