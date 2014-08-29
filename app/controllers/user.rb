@@ -3,8 +3,9 @@ get '/create_acct' do
 end
 
 post '/create_acct' do
-  User.create(name: params[:username], password: params[:password])
-  redirect to('/')
+  user = User.create(name: params[:username], password: params[:password])
+  session[:username] = user.name
+  redirect to('/dashboard')
 end
 
 get '/login' do
@@ -12,11 +13,18 @@ get '/login' do
 end
 
 post '/login' do
-  if User.exist?(params[:username], params[:password])
-    session[:username] = params[:username]
-    redirect to ('/dashboard')
+  session[:error] = nil if !session[:error]
+  user = User.find_by(name: params[:username])
+  if user == nil
+    session[:error] = 'Invalid username.'
+    redirect '/login'
+  elsif user.password != params[:password]
+    session[:error] = 'Invalid password.'
+    redirect '/login'
   else
-    redirect to('/')
+    session[:username] = params[:username]
+    session[:error] = nil
+    redirect to ('/dashboard')
   end
 end
 

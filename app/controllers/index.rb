@@ -1,4 +1,5 @@
 get '/' do
+  session[:error] = nil
   erb :main_page, layout: false
 end
 

@@ -1,7 +1,7 @@
 <div class='container'>
   <ol>
     <%@followers.each do |follower| %>
-    <li><%=follower.name%></li>
+    <li><a href="/user/<%=follower.name%>"><%=follower.name%></a></li>
     <% end %>
   </ol>
 </div>

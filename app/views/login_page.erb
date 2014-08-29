@@ -9,4 +9,8 @@
   <br>
 <input type="submit" value="Submit">
 </form>
+<% if session[:error] %>
+  <p style="color:red"><%= session[:error] %></p>
+<% end %>
 </div>
+
