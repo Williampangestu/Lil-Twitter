@@ -43,6 +43,16 @@ get '/logout' do
   redirect '/'
 end
 
+post '/follow/:username' do
+  User.find_by(name:session[:username]).followees << User.find_by(name: params[:username])
+  redirect "/#{params[:username]}"
+end
+
+post '/unfollow/:username' do
+  User.find_by(name:session[:username]).followees.delete(User.find_by(name: params[:username]))
+  redirect "/#{params[:username]}"
+end
+
 get '/:username' do
   if signed_in?
     # p User.find_by_name(params[:username])
