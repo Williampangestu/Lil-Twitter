@@ -5,8 +5,8 @@
 </form>
 	<br>
 	tweets: <%= @user.tweets.count %><br>
-	<a href="/user/<%=session[:username]%>/followings">following:</a> <%= @user.followees.count %><br>
-	<a href="/user/<%=session[:username]%>/followers">followers:</a> <%= @user.followers.count %>
+	<a id="following" href="/user/<%=session[:username]%>/followings">following:</a> <%= @user.followees.count %><br>
+	<a id="followers" href="/user/<%=session[:username]%>/followers">followers:</a> <%= @user.followers.count %>
 
 </div>
 

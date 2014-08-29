@@ -30,6 +30,10 @@ header {
   position: fixed;
 }*/
 
+header a {
+  text-decoration: none;
+}
+
 .logout {
   color: black;
   font-size: 1.0em;
@@ -70,6 +74,16 @@ header {
   margin-top: 20%;
   margin-left: 2%;
   font-size: 1.25em;
+  text-decoration: none;
+}
+
+#following, #followers {
+  text-decoration: none;
+  color: black;
+}
+
+a :hover {
+  color: #99CCFF;
 }
 
 #new_tweet {
@@ -87,6 +101,17 @@ header {
 }
 
 .tweet_container {
+  left: 35%;
+  top: 25%;
+  text-align: center;
+  font-size: 1.25em;
+  background-color: white;
+  width: 30%;
+  position: fixed;
+  border-radius: 10px;
+}
+
+.followers {
   left: 35%;
   top: 25%;
   text-align: center;
