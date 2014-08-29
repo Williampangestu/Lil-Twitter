@@ -35,7 +35,7 @@ post '/unfollow/:username' do
   redirect "/user/#{params[:username]}"
 end
 
-post '/:username/tweets/new' do
+post '/user/:username/tweets/new' do
     tweet = Tweet.create(content: params[:content])
     user = User.find_by_name(params[:username])
     user.tweets << tweet

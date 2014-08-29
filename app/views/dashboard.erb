@@ -1,14 +1,19 @@
 <div id="sidebar">
-	<%= session[:username] %>
+	<h3><%= session[:username] %></h3>
+	<form id="profile_page_access" name="input" action="/user/<%=session[:username]%>" method="get">
+	<input type="submit" value="Go to Profile Page">
+</form>
 	<br>
-	tweets: <%= @user.tweets.count %>
-	<a href="/user/<%=session[:username]%>/followings">following:</a> <%= @user.followees.count %>
+	tweets: <%= @user.tweets.count %><br>
+	<a href="/user/<%=session[:username]%>/followings">following:</a> <%= @user.followees.count %><br>
 	<a href="/user/<%=session[:username]%>/followers">followers:</a> <%= @user.followers.count %>
 
 </div>
-<form name="input" action="/user/<%=session[:username]%>" method="get">
-	<input type="submit" value="Go to Profile Page">
+
+<form id="new_tweet_dashboard" name="input" action="/user/<%=@user.name%>/tweets/new" method="post">
+    New Tweet: <input type="text" name="content" placeholder="Text here"><input type="submit" value="Post">
 </form>
+
 <div id="tweets">
 <% @tweets.each do |tweet| %>
 	<div class="tweet_display">
@@ -18,6 +23,8 @@
 		</div>
 		<div class="tweet_date">
 			<%= tweet.created_at %>
+			<br>
+			<%= "------------------------"%>
 		</div>
 	</div>
 <% end %>
