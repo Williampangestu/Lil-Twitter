@@ -6,6 +6,7 @@
 	followers: <%= @user.followers.count %>
 
 </div>
+<%= erb :search_bar, locals: {location: 'dashboard'} %>
 <form name="input" action="/profile_page" method="get">
 	<input type="submit" value="Go to Profile Page">
 </form>

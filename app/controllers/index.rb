@@ -24,7 +24,7 @@ post '/login' do
   end
 end
 
-get '/dashboard' do
+get '/dashboard/?' do
   if signed_in?
     @user = User.find_by(name: session[:username])
     @tweets = @user.tweets
@@ -43,7 +43,17 @@ get '/logout' do
   redirect '/'
 end
 
-get '/:username' do
+post '/search/:loc' do
+  results = []
+  User.all.each do |user|
+    if user.name.include?(params[:search])
+      results << user.name
+    end
+  end
+  redirect to("/#{params[:loc]}/?answers=#{results}")
+end
+
+get '/:username/?' do
   if signed_in?
     p User.find_by_name(params[:username])
     p session[:username]
