@@ -21,6 +21,22 @@ get '/dashboard' do
   end
 end
 
+post '/search' do
+  results = ""
+  User.all.each do |user|
+    if user.name.include?(params[:search])
+      results << user.name + " "
+    end
+  end
+  redirect to("/search_view/?answers=#{results}")
+end
+
+get '/search_view/?' do
+  p params
+  @results = params[:answers].split(" ")
+  erb :search_view
+end
+
 get '/user/:username' do
   if signed_in?
     # p User.find_by_name(params[:username])
