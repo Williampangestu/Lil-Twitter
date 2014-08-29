@@ -6,6 +6,7 @@
 	<a href="/user/<%=session[:username]%>/followers">followers:</a> <%= @user.followers.count %>
 
 </div>
+<%= erb :search_bar %>
 <form name="input" action="/user/<%=session[:username]%>" method="get">
 	<input type="submit" value="Go to Profile Page">
 </form>
