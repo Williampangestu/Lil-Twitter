@@ -11,16 +11,28 @@
 
 <div id="login_div">
   <h2>Welcome back!</h2>
-  <form id="login_id" name="input" action="/login" method="get">
-  <input type="submit" value="Login">
+   <form name="input" action="/create_acct" method="post">
+    Username: <input type="text" name="username">
+    <br>
+    <br>
+    Password: <input type="text" name="password">
+    <br>
+    <br>
+    <input type="submit" value="Sign In">
   </form>
 </div>
 <br>
 
 <div id="signup_div">
   <h2>New to Lil'Twitter?</h2>
-  <form id="signup_id" name="input" action="/create_acct" method="get">
-  <input type="submit" value="Create Account">
+  <form name="input" action="/create_acct" method="post">
+    Username: <input type="text" name="username">
+    <br>
+    <br>
+    Password: <input type="text" name="password">
+    <br>
+    <br>
+    <input type="submit" value="Sign Up">
   </form>
 </div>
 

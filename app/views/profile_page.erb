@@ -1,11 +1,13 @@
 <div id="sidebar">
   <%= session[:username] %>
   <!-- GRAVATAR HERE -->
+
+  <!-- <img src=<%=@image%>> -->
   <br>
   <p><%= @user.name %>'s stats: </p>
   tweets: <%= @user.tweets.count %>
-  following: <%= @user.followees.count %>
-  followers: <%= @user.followers.count %>
+  <a href="/user/<%=@user.name%>/followings">following:</a> <%= @user.followees.count %>
+  <a href="/user/<%=@user.name%>/followers">followers:</a> <%= @user.followers.count %>
   <br>
   <% if @user.name != session[:username] %>
     <% if User.find_by(name: session[:username]).followees.include?(@user) %>
@@ -25,6 +27,7 @@
 
   <h1><%=@user.name%>'s Profile</h1>
   <% if signed_in? == @user.name %>
+  <%= erb :search_bar %>
   <form name="input" action="/user/<%=@user.name%>/tweets/new" method="post">
     New Tweet: <input type="text" name="content" placeholder="Text here"><input type="submit" value="Post">
   </form>
