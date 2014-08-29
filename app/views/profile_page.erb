@@ -4,8 +4,8 @@
   <br>
   <p><%= @user.name %>'s stats: </p>
   tweets: <%= @user.tweets.count %>
-  following: <%= @user.followees.count %>
-  followers: <%= @user.followers.count %>
+  <a href="/user/<%=@user.name%>/followings">following:</a> <%= @user.followees.count %>
+  <a href="/user/<%=@user.name%>/followers">followers:</a> <%= @user.followers.count %>
   <br>
   <% if @user.name != session[:username] %>
     <% if User.find_by(name: session[:username]).followees.include?(@user) %>
