@@ -1,3 +1,24 @@
+<div id="sidebar">
+  <%= @user.name %>
+  <!-- GRAVATAR HERE -->
+  <br>
+  tweets: <%= @user.tweets.count %>
+  following: <%= @user.followees.count %>
+  followers: <%= @user.followers.count %>
+  <br>
+  <% if @user.name != session[:username] %>
+    <% if session[:username].followees.include?(@user) %>
+      <form name="input" action="/unfollow" method="get">
+        <input type="submit" value="Unfollow">
+      </form>
+    <% else %>
+      <form name="input" action="/follow" method="get">
+        <input type="submit" value="Follow">
+      </form>
+    <% end %>
+  <% end %>
+</div>
+
 <div class='container'>
 
 
