@@ -21,7 +21,7 @@
 	<div class="tweet_display">
 		<%= tweet.content %>
 		<div class="tweet_author">
-			<%= tweet.user.name %>
+			<a href="/user/<%= tweet.user.name %>"><%= tweet.user.name %></a>
 		</div>
 		<div class="tweet_date">
 			<%= tweet.created_at %>
