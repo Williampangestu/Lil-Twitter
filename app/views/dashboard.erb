@@ -6,7 +6,9 @@
 	followers: <%= @user.followers.count %>
 
 </div>
-
+<form name="input" action="/profile_page" method="get">
+	<input type="submit" value="Go to Profile Page">
+</form>
 <div id="tweets">
 <% @tweets.each do |tweet| %>
 	<div class="tweet_display">
