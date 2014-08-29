@@ -24,8 +24,6 @@ end
 
 get '/user/:username' do
   if signed_in?
-    # p User.find_by_name(params[:username])
-    # p session[:username]
     @user = User.find_by_name(params[:username]) || User.find_by(name: session[:username])
     @tweets = []
     @user.tweets.each do |tweet|

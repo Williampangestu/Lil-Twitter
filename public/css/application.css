@@ -1,7 +1,32 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 5px solid blue;
+a h1 {
+  color: #0099FF;
+  font-size: 3em;
   text-align: center;
 }
+
+#login_page_div {
+  width: 50%;
+  height: 30%;
+  font-size: 1.75em;
+  color: #0099FF;
+  text-align: center;
+  background-color: white;
+  top: 40%;
+  left: 25%;
+  border-radius: 10px;
+  position: fixed;
+}
+
+body {
+  background-color: #0099FF;
+}
+
+header {
+  background-color: white;
+  width: 100%;
+  height: 15vh;
+  top: 0px;
+  position: fixed;
+}
+
+
