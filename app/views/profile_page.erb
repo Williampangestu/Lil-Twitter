@@ -7,12 +7,12 @@
   followers: <%= @user.followers.count %>
   <br>
   <% if @user.name != session[:username] %>
-    <% if session[:username].followees.include?(@user) %>
-      <form name="input" action="/unfollow" method="get">
+    <% if User.find_by(name: session[:username]).followees.include?(@user) %>
+      <form name="input" action="/unfollow/<%=@user.name%>" method="post">
         <input type="submit" value="Unfollow">
       </form>
     <% else %>
-      <form name="input" action="/follow" method="get">
+      <form name="input" action="/follow/<%=@user.name%>" method="post">
         <input type="submit" value="Follow">
       </form>
     <% end %>
