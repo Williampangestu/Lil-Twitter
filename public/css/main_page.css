@@ -28,6 +28,7 @@ html {
   margin: auto;
   text-align: center;
   opacity: 0.8;
+  border: 1px solid black;
 }
 
 #signup_div {
@@ -41,6 +42,7 @@ html {
   margin: auto;
   text-align: center;
   opacity: 0.8;
+  border: 1px solid black;
 }
 
 #signup_id {
